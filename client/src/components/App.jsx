@@ -18,7 +18,7 @@ class App extends React.Component {
   }
 
   render() {
-    const { data, roomNum, isMounted } = this.state
+    const { roomNum, isMounted } = this.state
     if (isMounted) {
       return (
         <div>

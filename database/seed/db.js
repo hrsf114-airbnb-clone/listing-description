@@ -14,7 +14,7 @@ let getSleepingArrangement = (beds, bedrooms) => {
   return result;
 }
 
-for (i = 0; i < 101; i++) {
+for (i = 1; i < 101; i++) {
   let amenities = {
     basic: {
       wifi: faker.random.boolean(),

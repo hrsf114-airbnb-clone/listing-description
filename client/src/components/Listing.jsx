@@ -7,7 +7,7 @@ class Listing extends React.Component {
   constructor(props) {
     super(props)
     this.state = {
-      currentRoom: {},
+      currentRoom: null,
       isMounted: false
     }
   }
@@ -30,9 +30,7 @@ class Listing extends React.Component {
 
   render() {
     const { currentRoom } = this.state
-    if (this.state.isMounted) {
-      console.log('highlight is');
-      console.log(currentRoom.highlight);
+    if (this.state.isMounted && this.state.currentRoom) {      
       return (
         <div className="container-fluid">
           <div className="row">
@@ -74,7 +72,7 @@ class Listing extends React.Component {
                     {
                       (currentRoom.hostObj.superhost === true) &&
                       <div>
-                        <div className="col-md-12 sub-head">
+                        <div className="col-md-12 sub-head superhost">
                           <i className="fas fa-medal icon-main"></i>
                           <b>{currentRoom.hostObj.name} is a Superhost</b>
                         </div>
@@ -101,7 +99,7 @@ class Listing extends React.Component {
       )
     } else {
       return (
-        <div>Loading...</div>
+        <div className="loading">Loading...</div>
       )
     }
   }

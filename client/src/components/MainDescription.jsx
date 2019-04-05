@@ -11,6 +11,7 @@ class MainDescription extends React.Component {
 
   showMore = () => this.setState({ showAll: true });
   showLess = () => this.setState({ showAll: false });
+  
   render() {
     const { currentRoom } = this.props;
     const { showAll } = this.state;
@@ -18,6 +19,7 @@ class MainDescription extends React.Component {
     if (currentRoom.mainDescr.length <= 250) {
       return (<div>{currentRoom.mainDescr}</div>)
     }
+
     if (showAll) {
       return (
         <div>
@@ -26,14 +28,15 @@ class MainDescription extends React.Component {
               return <span key={key}>{item}<br /><br /></span>
             })
           }
-          <a onClick={this.showLess}>Hide</a>
+          <a onClick={this.showLess} className='hide'>Hide</a>
         </div>)
     }
+    
     const toShow = currentRoom.mainDescr.substring(0, 250) + "...";
     return (<div>
       {toShow}
       <br />
-      <a href="#" role="button" onClick={this.showMore}>Read more about the space</a>
+      <a href="#" role="button" onClick={this.showMore} className='read-more'>Read more about the space</a>
     </div>)
   }
 }

@@ -39,14 +39,14 @@ class Amenities extends React.Component {
   }
 
   AmenitiesModal(amenities) {
-    const content = Object.keys(amenities).map((category) => {
+    const content = Object.keys(amenities).map((category, index) => {
       return (
-        <div className="col-md-12">
+        <div className="col-md-12" key={index}>
           <div className="row">
             <div className="col-md-12 capitalize category"><b>{category}</b></div>
-            {Object.keys(amenities[category]).map((subCategory) => {
+            {Object.keys(amenities[category]).map((subCategory, subIndex) => {
               return (
-                <div className="col-md-12 capitalize">
+                <div className="col-md-12 capitalize sub-category" key={subIndex}>
                   {subCategory}
                   {this.getDesc(subCategory)}
                   <hr />
@@ -86,9 +86,9 @@ class Amenities extends React.Component {
     return (
       <div className="row">
         {
-          top.map((el, index) => {
+          top.map((el, i) => {
             return (
-              <div className="col-md-6" key={index}>
+              <div className="col-md-6" key={i}>
                 <i className={`fas ${this.amenitiesIcon[el]} icon-main`}></i>
                 {el}
               </div>
