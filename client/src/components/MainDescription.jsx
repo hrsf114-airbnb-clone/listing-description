@@ -23,7 +23,7 @@ class MainDescription extends React.Component {
         <div>
           {
             currentRoom.mainDescr.split('\n').map((item, key) => {
-              return <span key={key}>{item}<br/><br/></span>
+              return <span key={key}>{item}<br /><br /></span>
             })
           }
           <a onClick={this.showLess}>Hide</a>
@@ -32,7 +32,7 @@ class MainDescription extends React.Component {
     const toShow = currentRoom.mainDescr.substring(0, 250) + "...";
     return (<div>
       {toShow}
-      <br/>
+      <br />
       <a href="#" role="button" onClick={this.showMore}>Read more about the space</a>
     </div>)
   }

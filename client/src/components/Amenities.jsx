@@ -20,7 +20,7 @@ class Amenities extends React.Component {
       washer: 'In the building, free or for a fee',
       essentials: 'Towels, bed sheets, soap, and toilet paper',
       heating: 'Central heating or a heater in the listing',
-      kitchen: 'Space where guests can cook their own meals',      
+      kitchen: 'Space where guests can cook their own meals',
     }
   }
 
@@ -39,23 +39,23 @@ class Amenities extends React.Component {
   }
 
   AmenitiesModal(amenities) {
-    const content = Object.keys(amenities).map((category) => {      
-      return(  
-          <div className="col-md-12">
-            <div className="row">
-              <div className="col-md-12 capitalize category"><b>{category}</b></div>          
-              {Object.keys(amenities[category]).map((subCategory) => {                   
-                  return (
-                    <div className="col-md-12 capitalize">
-                      {subCategory}                      
-                      {this.getDesc(subCategory)}                                            
-                      <hr/>
-                    </div>                  
-                  )
-              })}
-            </div>
-          </div>      
-      )            
+    const content = Object.keys(amenities).map((category) => {
+      return (
+        <div className="col-md-12">
+          <div className="row">
+            <div className="col-md-12 capitalize category"><b>{category}</b></div>
+            {Object.keys(amenities[category]).map((subCategory) => {
+              return (
+                <div className="col-md-12 capitalize">
+                  {subCategory}
+                  {this.getDesc(subCategory)}
+                  <hr />
+                </div>
+              )
+            })}
+          </div>
+        </div>
+      )
     });
     return (
       <div className="modal fade" id="modal" tabIndex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
@@ -65,7 +65,7 @@ class Amenities extends React.Component {
               <div className="row">
                 <div className="col-md-12">
                   <button type="button" className="close" data-dismiss="modal" aria-label="Close" style={{ float: 'left' }}>
-                    <span aria-hidden="true">&times;</span>                                
+                    <span aria-hidden="true">&times;</span>
                   </button>
                 </div>
                 <div className="col-md-12 category">
