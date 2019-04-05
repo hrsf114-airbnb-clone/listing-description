@@ -1,5 +1,5 @@
 import React from 'react'
- import { tsImportEqualsDeclaration } from '@babel/types';
+import { tsImportEqualsDeclaration } from '@babel/types';
 import MainDescription from './MainDescription.jsx'
 import Amenities from './Amenities.jsx';
 
@@ -12,13 +12,12 @@ class Listing extends React.Component {
     }
   }
 
-  //this.props - object
   componentDidMount() {
-    fetch(`http://localhost:3000/api/listing/${this.props.currentListingId}`)
+    fetch(`http://localhost:3000/api/listing/${this.props.roomNum}`)
       .then(res => res.json())
       .then(
         (result) => {
-          this.setState({            
+          this.setState({
             currentRoom: result,
             isMounted: true
           });
@@ -30,7 +29,7 @@ class Listing extends React.Component {
   }
 
   render() {
-    const { currentRoom } = this.state        
+    const { currentRoom } = this.state
     if (this.state.isMounted) {
       console.log('highlight is');
       console.log(currentRoom.highlight);
@@ -39,24 +38,24 @@ class Listing extends React.Component {
           <div className="row">
             <div className="col-md-12">
             </div>
-          </div>          
+          </div>
           <div className="row">
             <div className="col-md-7">
-              <div className="row">              
+              <div className="row">
                 <div className="col-md-3">
                 </div>
-                <div className="col-md-9">                
+                <div className="col-md-9">
                   <h1>{currentRoom.title}</h1>
                   <div>{currentRoom.locality}</div>
                   <div className="row">
                     <div className="col-md-12 sub-head">
                       <i className="fas fa-home icon-main"></i>
-                      {                        
+                      {
                         <b>{(currentRoom.bedrooms > 1) ?
-                          currentRoom.description[Math.floor(Math.random()*(currentRoom.description.length))]: 'Private room'}
-                        </b> 
+                          currentRoom.description[Math.floor(Math.random() * (currentRoom.description.length))] : 'Private room'}
+                        </b>
                       }
-                    </div>                    
+                    </div>
                     <div className="col-md-12">
                       <div className="row">
                         <div className="col-md-2">{currentRoom.guests} guests</div>
@@ -72,9 +71,9 @@ class Listing extends React.Component {
                     <div className="col-md-12">
                       {currentRoom.highlight[1]}
                     </div>
-                    {                      
-                      (currentRoom.hostObj.superhost === true) &&                      
-                      <div>                        
+                    {
+                      (currentRoom.hostObj.superhost === true) &&
+                      <div>
                         <div className="col-md-12 sub-head">
                           <i className="fas fa-medal icon-main"></i>
                           <b>{currentRoom.hostObj.name} is a Superhost</b>
@@ -84,13 +83,13 @@ class Listing extends React.Component {
                     }
                   </div>
 
-                  <hr/>
+                  <hr />
                   <div>
-                    <MainDescription  currentRoom={currentRoom}/>
+                    <MainDescription currentRoom={currentRoom} />
                   </div>
-                  <hr/>
+                  <hr />
                   <div>
-                    <Amenities currentRoom={currentRoom}/>
+                    <Amenities currentRoom={currentRoom} />
                   </div>
                 </div>
               </div>
