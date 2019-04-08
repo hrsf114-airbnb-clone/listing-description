@@ -13,6 +13,7 @@ let getSleepingArrangement = (beds, bedrooms) => {
   }
   return result;
 }
+let coordinates = [{lat: 40.758896, lng: -73.985130}, {lat: 48.858093, lng: 2.294694}, {lat: 51.510067, lng: -0.133869}, {lat: 55.75222, lng: 37.61556}]
 
 for (i = 1; i < 101; i++) {
   let amenities = {
@@ -56,6 +57,7 @@ for (i = 1; i < 101; i++) {
   ]
 
   let roomObj = {
+    coordinates: coordinates[Math.floor(Math.random() * coordinates.length)],
     highlight: highlights[Math.floor(Math.random() * highlights.length)],
     roomNum: i,
     mainDescr: faker.lorem.paragraphs(5),
