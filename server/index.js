@@ -10,6 +10,7 @@ const PORT = 3000;
 app.use(cors());
 app.use(morgan('combined'));
 app.use('/rooms/:id/', express.static(path.join(__dirname, '../client/dist')));
+app.use(express.static(path.join(__dirname, '../client/dist')));
 
 app.get('/api/listing', function (req, res) {
   models.Room.find({}, (err, rooms) => { res.status(200).send(rooms) })

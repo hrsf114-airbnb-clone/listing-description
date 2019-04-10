@@ -13,7 +13,7 @@ class Listing extends React.Component {
   }
 
   componentDidMount() {
-    fetch(`http://localhost:3000/api/listing/${this.props.roomNum}`)
+    fetch(`/api/listing/${this.props.roomNum}`)
       .then(res => res.json())
       .then(
         (result) => {
