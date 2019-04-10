@@ -9,8 +9,13 @@ class MainDescription extends React.Component {
     }
   }
 
-  showMore = () => this.setState({ showAll: true });
-  showLess = () => this.setState({ showAll: false });
+  showMore = () => {
+   
+    this.setState({ showAll: true });
+  }
+  showLess = () => {
+    this.setState({ showAll: false });
+  }
   
   render() {
     const { currentRoom } = this.props;
@@ -36,7 +41,7 @@ class MainDescription extends React.Component {
     return (<div>
       {toShow}
       <br />
-      <a href="#" role="button" onClick={this.showMore} className='read-more'>Read more about the space</a>
+      <a onClick={this.showMore} className='read-more'>Read more about the space</a>>
     </div>)
   }
 }

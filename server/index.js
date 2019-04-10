@@ -2,10 +2,12 @@ const express = require('express');
 const morgan = require('morgan');
 const path = require('path');
 const models = require('../database/models');
+const cors = require('cors')
 
 const app = express();
 const PORT = 3000;
 
+app.use(cors());
 app.use(morgan('combined'));
 app.use('/rooms/:id/', express.static(path.join(__dirname, '../client/dist')));
 

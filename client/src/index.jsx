@@ -2,4 +2,5 @@ import React from 'react'
 import ReactDOM from 'react-dom';
 import App from './components/App.jsx'
 
-ReactDOM.render(<App />, document.getElementById('app'));
+window.Listing = App;
+ReactDOM.render(<App />, document.getElementById('Listing'));
