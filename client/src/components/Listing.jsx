@@ -99,7 +99,7 @@ class Listing extends React.Component {
       )
     } else {
       return (
-        <div className="loading">Loading...</div>
+        <div className="loading">Loading....</div>
       )
     }
   }
