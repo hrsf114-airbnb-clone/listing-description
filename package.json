@@ -5,7 +5,9 @@
   "author": "Victoria Lamanova",
   "license": "",
   "scripts": {
+    "start-docker": "node database/seed/db.js & node server/index.js",
     "start": "nodemon server/index.js",
+    "start-dev": "nodemon server/index.js",
     "seed": "node database/seed/db.js",
     "react-dev": "webpack -d --watch",
     "test": "jest",

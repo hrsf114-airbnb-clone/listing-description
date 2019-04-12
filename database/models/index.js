@@ -1,7 +1,7 @@
 const mongoose = require('mongoose');
 const faker = require('faker')
 
-mongoose.connect('mongodb://localhost/airbnb', { useNewUrlParser: true });
+mongoose.connect('mongodb://database/airbnb', { useNewUrlParser: true });
 
 let roomSchema = new mongoose.Schema({
   title: String,
